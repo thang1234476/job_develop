@@ -15,6 +15,7 @@ html, body {
 .container-header h2{
     margin-top: 5px;
     font-family: 'Courier New', Courier, monospace;     
+    text-shadow: 2px 2px #FF0000;
 }
 .page-1 {
     height: 100vh;
@@ -135,15 +136,20 @@ html, body {
   .page-3 {
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
     flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
-    align-content: flex-start;
-    margin-bottom: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
   }
   .card {
-    margin: 10px 4px;
+    margin: 10px 10px;
+  }
+  .card-title {
+    font-size: 16px;
+  }
+  .card-text {
+    font-size: 14px;
   }
   
   body{margin:0;height:100%;}
