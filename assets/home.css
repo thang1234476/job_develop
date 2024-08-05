@@ -2,7 +2,7 @@
 html, body {
     overflow-x: hidden;
     scrollbar-width: none;
-    background-color: rgb(178, 255, 255);
+    background-color: rgb(190, 255, 255);
 }   
 .container-header {
     height: 50px;
@@ -17,6 +17,14 @@ html, body {
     font-family: 'Courier New', Courier, monospace;     
     text-shadow: 2px 2px #FF0000;
 }
+.music {
+  width: 25px;
+  height: 25px;
+  background-color: #008cff;
+  border-radius: 50%;
+  margin-top: 75vh;
+  margin-left: 2%;
+}
 .page-1 {
     height: 100vh;
     width: 100%;
@@ -25,21 +33,23 @@ html, body {
     flex-direction: column;
 }
 .page-1 .picture {
+    height: 55vh;
     display: flex;
     align-items: center;
     flex-direction: row;
     justify-content: center;
     flex-wrap: nowrap;
-    margin-top: 60px;
+    margin-top: 50px;
 }
 .container-body .page-1 .picture-1{
     margin: 0 25px;
     border-radius: 5px;
+    margin-top: 20px;
 }
 .container-body .page-1 .picture-2,
 .container-body .page-1 .picture-3 {
     border-radius: 5px;
-    margin: 5px 0px 0px 0px;
+    margin: 10px 0px 20px 0px;
 }
 .container-body .page-1 .picture-2 {
     transform: rotate(15deg);
@@ -50,28 +60,31 @@ html, body {
 .page-1 .picture-1:hover{
     transform: scale(1.1);
     filter: none;
+    z-index: 1;
 }
 .page-1 .picture-2:hover,
 .page-1 .picture-3:hover {
     transform: scale(1.3);
     filter: none;
+    z-index: 1;
 }
 .picture:hover .picture-1:not(:hover),
 .picture:hover .picture-2:not(:hover),
 .picture:hover .picture-3:not(:hover){
     filter: brightness(0.7) saturate(0.5) contrast(1.2) blur(5px);
+    z-index: 0;
 }
 .title-welcom{
-    margin-top: 50px;
+    margin-top: 40px;
     text-align: center;
 }
 .title-welcom h2 {
     font-size: 50px;
-            font-weight: bold;
-            background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+    font-weight: bold;
+    background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
             
 }
 /* HTML: <div class="loader"></div> */
@@ -142,18 +155,43 @@ html, body {
     align-items: center;
     align-content: center;
   }
-  .card {
-    margin: 10px 10px;
+  
+  .card-body {
+    background-image: url("https://vn1.vdrive.vn/alohamedia.vn/2023/12/AGfa8SRW-Chup-anh-ky-yeu-hoc-sinh-cap-3-dep-doc-la-1.webp");
   }
   .card-title {
-    font-size: 16px;
-  }
-  .card-text {
     font-size: 14px;
   }
-  
-  body{margin:0;height:100%;}
-canvas{
-    position:absolute;top:0;left:0;
-    z-index:100;
+  .card-text {
+    font-size: 12px;
+  }
+  .container-card {
+    width: 180px;
+    height: 250px;
+    position: relative;
+    margin: 10px 10px;
+  }
+  .card-hover {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .container-card .card,
+  .container-card .card-hover {
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: opacity 0.5s ease;
+}
+.container-card .card-hover {
+  position: absolute;
+  top: 0;
+  left: 0;  
+  opacity: 0;
+}
+.container-card:hover .card-hover {
+  opacity: 1;
+}
+.container-card:hover .card {
+  opacity: 0;
 }
